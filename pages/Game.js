@@ -5,15 +5,7 @@ import { DataContext } from '@/store/GlobalState';
 import { useRouter } from 'next/router';
 
 export default function Game() {
-    const handleLogout = () => {
-        Cookie.remove('refreshtoken', { path: '/api/auth/refreshToken' })
-        localStorage.removeItem('firstLogin')
-        dispatch({ type: 'AUTH', payload: {} })
-        router.push('/')
-      }
 
-      const { state = {}, dispatch } = useContext(DataContext)
-      const { auth = {} } = state
     
       const router = useRouter();
   return (
@@ -25,7 +17,7 @@ export default function Game() {
       </Head>
 
       <img src='/full.gif' className='md:w-auto w-full' alt='Fun Roulette GIF' />
-      <h1 onClick={handleLogout}s className='absolute cursor-pointer text-green-600 lg:mt-[53%] mt-[43%] text-sm  lg:text-2xl'>Fun Roulette Ahmad</h1>
+      <h1  className='absolute cursor-pointer text-green-600 lg:mt-[53%] mt-[43%] text-sm  lg:text-2xl'>Fun Roulette Ahmad</h1>
     </div>
   );
 }
